@@ -248,10 +248,10 @@ public class HW_Api2Oracle {
      * @return
      */
     public static boolean data2Oracle2(String data,String tableName){
-        JSONObject parseObject = JSONObject.parseObject(data);
-        JSONObject data1 = parseObject.getJSONObject("data");
-        String data2 = data1.getString("data");
-        JSONArray jsonArray = JSONArray.parseArray(data2);
+//        JSONObject parseObject = JSONObject.parseObject(data);
+//        JSONObject data1 = parseObject.getJSONObject("data");
+//        String data2 = data1.getString("data");
+        JSONArray jsonArray = JSONArray.parseArray(data);
 
         for (int i = 0;i < jsonArray.size();i++){
 
