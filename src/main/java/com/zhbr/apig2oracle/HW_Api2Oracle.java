@@ -51,7 +51,7 @@ public class HW_Api2Oracle {
             public void run() {
                 HashMap<String,String> mapList = getUrlAndTableRelationship("DDLC");
                 for(String key : mapList.keySet()){
-                    String dataStr = getHWDataByAppKey("10388110a4134cdb9dda9ce1c6e969c8", "047b3d3bf0684bb1b17c682ef699f098", key);
+                    String dataStr = getHWDataByAppKey("xxxx", "xxxx", key);
 
                     data2Oracle2(dataStr,mapList.get(key));
                 }
@@ -67,7 +67,7 @@ public class HW_Api2Oracle {
             public void run() {
                 HashMap<String,String> mapList = getUrlAndTableRelationship("DASJ");
                 for(String key : mapList.keySet()){
-                    String dataStr = getHWDataByAppKey("10388110a4134cdb9dda9ce1c6e969c8", "047b3d3bf0684bb1b17c682ef699f098", key);
+                    String dataStr = getHWDataByAppKey("xxxx", "xxxx", key);
 
                     data2Oracle2(dataStr,mapList.get(key));
                 }
@@ -150,7 +150,6 @@ public class HW_Api2Oracle {
                 return null;
             }
 
-            logger.info("获取response: successful");
             return result;
         } catch (Exception e) {
             logger.error("获取response失败: "+e.getMessage());
@@ -257,7 +256,7 @@ public class HW_Api2Oracle {
         for (int i = 0;i < jsonArray.size();i++){
 
             JSONObject jsonObject = jsonArray.getJSONObject(i);
-            String columns = getTableSchema(tableName);
+            String columns = getTableSchema(tableName.toLowerCase());
 
             StringBuffer stringBuffer = new StringBuffer();
             stringBuffer.append("insert into ").append(tableName).append(" (").append(columns).append(") values(");
@@ -329,9 +328,9 @@ public class HW_Api2Oracle {
             try {
                 int update = queryRunner.update(sqlStr, arrayList.toArray());
                 if (update==1){
-                    logger.info("表数据"+tableName+"-->保存Oracle: successful");
+                    logger.info("表数据"+tableName.toUpperCase()+"-->保存Oracle: successful");
                 }else{
-                    logger.info("表数据"+tableName+"-->保存Oracle: failed");
+                    logger.info("表数据"+tableName.toUpperCase()+"-->保存Oracle: failed");
                 }
             } catch (SQLException e) {
                 logger.error(e.getMessage());

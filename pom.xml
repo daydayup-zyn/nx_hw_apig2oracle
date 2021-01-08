@@ -137,7 +137,7 @@
                             </filters>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.zhbr.apig2Oracle.HW_Api2Oracle</mainClass>
+                                    <mainClass>com.zhbr.apig2oracle.HW_Api2Oracle</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
