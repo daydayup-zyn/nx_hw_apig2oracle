@@ -22,8 +22,8 @@ public class InvokeHttp {
 
         Request request = new Request();
         try {
-            String key = "10388110a4134cdb9dda9ce1c6e969c8";
-            String secret = "047b3d3bf0684bb1b17c682ef699f098";
+            String key = "xxxx";
+            String secret = "xxxx";
             request.setKey(key);
             request.setSecret(secret);
             request.setMethod("GET");
